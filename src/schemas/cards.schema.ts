@@ -8,5 +8,6 @@ export const cardSchema = joi.object<CreateCardData>({
     cvv: joi.string().min(3).required(),
     password: joi.string().min(4).required(),
     is_virtual: joi.boolean().required(),
-    type: joi.string().valid(card_types).required(),
+    type: joi.string().valid(card_types.CREDIT, card_types.DEBIT, card_types.BOTH).required(),
+    label: joi.string().required(),
 })

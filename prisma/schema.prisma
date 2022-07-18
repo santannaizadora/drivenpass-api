@@ -55,12 +55,13 @@ model Note {
 
 model Card {
   id          Int @id @default(autoincrement())
-  number      String
+  number      String @unique
   expiry      String
   cvv         String
   password    String
   is_virtual  Boolean
   type        card_types
+  label       String
   user_id     Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
